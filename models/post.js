@@ -15,4 +15,5 @@ const postSchema = new mongoose.Schema({
     }
 });
 
+//to be acquired in controllers to create a new post:
 module.exports = mongoose.model("Post", postSchema);
