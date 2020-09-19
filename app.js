@@ -21,7 +21,9 @@ app.use(morgan("dev"));
 //add routes middleware:
 app.use('/', postRoutes);
 
-const port = 3000;
+
+//use port from .env:
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
     console.log("The app is running here: http://localhost:3000");
 });
