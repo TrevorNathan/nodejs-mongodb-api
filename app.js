@@ -32,6 +32,9 @@ mongoose.connection.on("error", err => {
     console.log('Ooh! FAILED Connection error: ${err.message}');
 });
 
+//to use a local DB:
+//MONGO_URI=mongodb://localhost/nodeapi
+
 
 //export routes:
 const postRoutes = require("./routes/post");
