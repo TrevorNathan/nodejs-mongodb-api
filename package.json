@@ -1,0 +1,21 @@
+{
+  "name": "nodeapi-course",
+  "version": "1.0.0",
+  "description": "a node api",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "node",
+    "api"
+  ],
+  "author": "trevor",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
+  }
+}
