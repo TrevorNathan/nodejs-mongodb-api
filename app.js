@@ -12,6 +12,12 @@ dotenv.config();
 //import mongoose: connect to mongodb:
 const mongoose = require('mongoose');
 
+//fix connection errors:
+mongoose.set('useNewUrlParser', true);
+// mongoose.set('useFindAndModify', false);
+// mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
+
 
 //create express app:
 const app = express();
