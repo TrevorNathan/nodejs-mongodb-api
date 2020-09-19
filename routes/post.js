@@ -6,5 +6,8 @@ const router = express.Router();
 
 router.get('/', postController.getPosts);
 
+//create post route:
+router.post("/post", postController.createPost);
+
 module.exports = router;
 
