@@ -1,0 +1,19 @@
+#nodejs modules:
+node_modules/
+
+#dotenv environment variables file:
+.env
+
+#Optional npm cache directory:
+.npm
+
+#Logs
+logs
+*.log
+npm-debug.log*
+
+#Output of 'npm pack':
+*.tgz
+
+#Optional REPL history:
+.node_repl_history
