@@ -44,7 +44,7 @@ app.use(morgan("dev"));
 
 
 //add routes middleware:
-app.use('/', postRoutes);
+app.use("/", postRoutes);
 
 
 //use port from .env:
