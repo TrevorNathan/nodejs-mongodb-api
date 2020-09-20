@@ -15,3 +15,8 @@ exports.createPost = (req, res) => {
     const post = new Post(req.body);
     console.log("CREATING POST: ", post);
 };
+
+/**
+ * OR:
+ * module.exports = {getPosts, createPost}
+ */
