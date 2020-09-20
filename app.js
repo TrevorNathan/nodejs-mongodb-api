@@ -1,6 +1,15 @@
 
-//########## EXPRESS MODULE #######################
-const express = require("express");
+//######## IMPORT MODULES #######################
+const express = require('express');
+const morgan = require('morgan');
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+
+const postRoutes = require("./routes/post");
+
+//########## USE EXPRESS #######################
+//const express = require("express");
 
 //create express app:
 const app = express();
@@ -9,9 +18,9 @@ const app = express();
 
 
 
-//########### MORGAN MODULE ###################
-//import morgan: see paths in terminal:
-const morgan = require('morgan');
+//########### USE MORGAN ###################
+//Helps to see paths in terminal:
+//const morgan = require('morgan');
 
 //use middleware:
 app.use(morgan("dev"));
@@ -20,9 +29,10 @@ app.use(morgan("dev"));
 
 
 
-//########## DOTENV MODULE ####################
+//########## USE DOTENV ####################
 //import dotenv: access db credentials securely:
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
+
 //to use .env, need to invoke .config method:
 dotenv.config();
 
@@ -30,9 +40,9 @@ dotenv.config();
 
 
 
-//######### DB CONNECTION ###################
+//######### USE MONGOOSE | DOTENV ###################
 //import mongoose: connect to mongodb:
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
 //fix connection errors:
 mongoose.set('useNewUrlParser', true);
@@ -56,9 +66,8 @@ mongoose.connection.on("error", err => {
 
 
 
-//############-ADD-ROUTES-##########################
-//export routes:
-const postRoutes = require("./routes/post");
+//############-USE-ROUTES-##########################
+// const postRoutes = require("./routes/post");
 
 //add routes middleware:
 app.use("/", postRoutes);
@@ -66,8 +75,18 @@ app.use("/", postRoutes);
 //###################################################
 
 
+//############-USE-BODYPARSER-##########################
+//used to pass body as a json
+// const bodyParser = require('body-parser');
 
-//##########-SERVE-APP-WITH-A-PORT####################
+//add routes middleware:
+app.use(bodyParser.json());
+
+//###################################################
+
+
+
+//##########-APP-PORT | USE DOTENV ####################
 //use port from .env:
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
