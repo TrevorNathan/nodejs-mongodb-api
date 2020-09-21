@@ -46,6 +46,10 @@ dotenv.config();
 // const mongoose = require('mongoose');
 
 /*
+<<<<<<< HEAD
+=======
+
+>>>>>>> 77490f9ff545cff42233651156161e3df0bce4f8
 //fix connection errors:
 mongoose.set('useNewUrlParser', true);
 // mongoose.set('useFindAndModify', false);
@@ -62,6 +66,21 @@ mongoose.connection.on("error", err => {
 });
 */
 
+<<<<<<< HEAD
+=======
+//SUMMARY:
+mongoose.connect(process.env.LOCAL_MONGO_URI,{
+    useNewUrlParser:true,
+    useUnifiedTopology:true
+},
+err => {
+    if(err == null){
+        console.log("SUCCESS! DB connected")
+    }else
+    {console.log("Error", err)}
+});
+ 
+>>>>>>> 77490f9ff545cff42233651156161e3df0bce4f8
 
 //to use a local DB:
 //MONGO_URI=mongodb://localhost/nodeapi
