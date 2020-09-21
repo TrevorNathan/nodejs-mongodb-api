@@ -44,6 +44,7 @@ dotenv.config();
 //import mongoose: connect to mongodb:
 // const mongoose = require('mongoose');
 
+/*
 //fix connection errors:
 mongoose.set('useNewUrlParser', true);
 // mongoose.set('useFindAndModify', false);
@@ -61,6 +62,19 @@ mongoose.connection.on("error", err => {
 
 //to use a local DB:
 //MONGO_URI=mongodb://localhost/nodeapi
+*/
+
+//Refactor-code:
+mongoose.connect(process.env.MONGO_URI,{
+    useNewUrlParser:true,
+    useUnifiedTopology:true
+},
+err => {
+    if(err == null){
+        console.log("SUCCESS! DB connected");
+    }else
+    {console.log("Error", err)}
+});
 
 //################################################
 
@@ -90,7 +104,7 @@ app.use(bodyParser.json());
 //use port from .env:
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
-    console.log("The app is running here: http://localhost:8080");
+    console.log(`The app is running on port ${port}`);
 });
 
 //######################################################
