@@ -29,7 +29,6 @@ app.use(morgan("dev"));
 //#############################################
 
 
-
 //########## USE DOTENV ####################
 //import dotenv: access db credentials securely:
 // const dotenv = require('dotenv');
@@ -45,11 +44,9 @@ dotenv.config();
 //import mongoose: connect to mongodb:
 // const mongoose = require('mongoose');
 
-/*
-<<<<<<< HEAD
-=======
+//######### USE MONGOOSE | DOTENV ###################
 
->>>>>>> 77490f9ff545cff42233651156161e3df0bce4f8
+/*
 //fix connection errors:
 mongoose.set('useNewUrlParser', true);
 // mongoose.set('useFindAndModify', false);
@@ -65,22 +62,6 @@ mongoose.connection.on("error", err => {
     console.log('Ooh! FAILED Connection error: ${err.message}');
 });
 */
-
-<<<<<<< HEAD
-=======
-//SUMMARY:
-mongoose.connect(process.env.LOCAL_MONGO_URI,{
-    useNewUrlParser:true,
-    useUnifiedTopology:true
-},
-err => {
-    if(err == null){
-        console.log("SUCCESS! DB connected")
-    }else
-    {console.log("Error", err)}
-});
- 
->>>>>>> 77490f9ff545cff42233651156161e3df0bce4f8
 
 //to use a local DB:
 //MONGO_URI=mongodb://localhost/nodeapi
