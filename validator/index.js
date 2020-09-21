@@ -1,6 +1,5 @@
 
-//const { check } = require("express-validator/check");
-
+ 
 exports.createPostValidator = (req, res, next) => {
     //ensure title is not-empty & correct length:
     req.check("title", "Write a title").notEmpty();
