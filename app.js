@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const expressValidator = require('express-validator');
 
 const postRoutes = require("./routes/post");
 
@@ -59,10 +60,11 @@ mongoose.connect(process.env.MONGO_URI)
 mongoose.connection.on("error", err => {
     console.log('Ooh! FAILED Connection error: ${err.message}');
 });
+*/
+
 
 //to use a local DB:
 //MONGO_URI=mongodb://localhost/nodeapi
-*/
 
 //Refactor-code:
 mongoose.connect(process.env.MONGO_URI,{
@@ -98,7 +100,7 @@ app.use(bodyParser.json());
 
 //###################################################
 
-
+app.use(expressValidator());
 
 //##########-APP-PORT | USE DOTENV ####################
 //use port from .env:
