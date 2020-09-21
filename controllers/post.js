@@ -16,6 +16,7 @@ exports.createPost = (req, res) => {
     //console.log("CREATING POST: ", req.body);
 
     //save to database:
+    /*
     post.save((err, result) => {
         if(err) {
             return res.status(400).json({
@@ -27,6 +28,16 @@ exports.createPost = (req, res) => {
             post: result
         });
     });
+    */
+
+    //after validation: save to db
+    post.save()
+    .then(result => {
+        res.status(200).json({
+            post: result
+        });
+    });
+
 };
 
 /**
